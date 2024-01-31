@@ -6,10 +6,12 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
+# load_dotenv()
 
-api_key = os.getenv('GOOGLE_API_KEY')
+# api_key = os.getenv('GOOGLE_API_KEY')
+api_key = st.secrets['GOOGLE_API_KEY']
 
 llm = GooglePalm(google_api_key=api_key, temperature=0)
 
